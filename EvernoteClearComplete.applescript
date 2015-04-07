@@ -1,5 +1,6 @@
 tell application "Evernote"
-	set todays_done to find notes "notebook:DONE tag:_today"
+	set todays_done to find notes "notebook:\"DONE\" tag:\"_today\""
+	log (count of todays_done)
 	my clear_all_tags(todays_done)
 	my tag_as_complete(todays_done)
 end tell

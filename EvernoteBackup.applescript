@@ -1,6 +1,6 @@
 with timeout of (30 * 60) seconds
 	tell application "Evernote"
-		set backupFolder to "/Users/vpaine/Documents/BK/"
+		set backupFolder to "/Users/vitopn/Documents/BK/"
 		set allNotebooks to every notebook
 		repeat with currentNoteBook in allNotebooks
 			set notebookName to (the name of currentNoteBook)
