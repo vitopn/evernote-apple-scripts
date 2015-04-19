@@ -1,7 +1,7 @@
 tell application "Evernote"
 	my move_to_today(notes of notebook "inbox")
-	my set_reminder(notes of notebook "inbox")
 	my move_to_todo(notes of notebook "inbox")
+	my set_reminder(find notes "tag:_today")
 end tell
 
 tell application "Evernote"
@@ -31,7 +31,9 @@ on set_reminder(matches)
 	tell application "Evernote"
 		if ((count of matches) > 0) then
 			repeat with theNote in matches
-				set the reminder order of theNote to current date
+				if not (exists reminder order of theNote) then
+					set the reminder order of theNote to current date
+				end if
 			end repeat
 		end if
 	end tell
