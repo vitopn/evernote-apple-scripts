@@ -1,7 +1,7 @@
 tell application "Evernote"
+	my set_reminder(notes of notebook "inbox")
 	my move_to_today(notes of notebook "inbox")
 	my move_to_todo(notes of notebook "inbox")
-	my set_reminder(find notes "tag:_today")
 end tell
 
 tell application "Evernote"
